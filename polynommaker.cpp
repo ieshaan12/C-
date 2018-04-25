@@ -22,7 +22,7 @@ double valuefinder(double val_x)
 {//cout<<c<<endl<<"Enter value for which you want to find the value of this polynomial"<<endl;
 double value=0;
 for(int i=0;i<n;i++)
-    {value+=coeff[i]*pow(x,power[i]);}
+    {value+=coeff[i]*pow(x,power[i]);
     }
     return value;
 }
