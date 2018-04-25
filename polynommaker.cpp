@@ -4,7 +4,7 @@ using namespace std;
 int polynommaker(int n)             // This n will be the number of terms entered by the user.
 {//cout<<"Number of x,power terms you want to input"<<endl;
 //cin>>n
-int coeff[n],power[n];              //Find a solution for passing these array to a different function that will evaluate the polynmial.
+float coeff[n],power[n];              //Find a solution for passing these array to a different function that will evaluate the polynmial.
 for(int i=0;i<n;i++)
 {cout<<"Coefficient for "<<(i+1)<<" term followed by its power"<<endl;
     cin>>coeff[i]>>power[i];            //Corresponding element in the array 
