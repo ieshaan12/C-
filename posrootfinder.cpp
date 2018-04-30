@@ -1,14 +1,19 @@
 #include<iostream>
 #include<math.h>
+#include<vector>
 using namespace std;
-float coeff[100],power[100];
-int polynommaker(int n)             // This n will be the number of terms entered by the user.
-{//cout<<"Number of x,power terms you want to input"<<endl;
-//cin>>n
-//float coeff[n],power[n];              //Find a solution for passing these array to a different function that will evaluate the polynmial.
+vector<float> coeff;
+vector<float> power;
+int polynommaker(int n)             
+{
+
+float co,po;
 for(int i=0;i<n;i++)
 {cout<<"Coefficient for "<<(i+1)<<" term followed by its power"<<endl;
-    cin>>coeff[i]>>power[i];            //Corresponding element in the array 
+    cin>>co>>po;
+    coeff.push_back(co);
+    power.push_back(po);
+    //Corresponding element in the vector 
 }
 cout<<"Final equation is"<<endl;
 for(int i=0;i<n;i++)
@@ -21,7 +26,7 @@ for(int i=0;i<n;i++)
 }
 
 double valuefinder(double val_x,int n) 
-{//cout<<c<<endl<<"Enter value for which you want to find the value of this polynomial"<<endl;
+{
 double value=0;
 for(int i=0;i<n;i++)
     {value+=coeff[i]*pow(val_x,power[i]);}
@@ -37,7 +42,6 @@ cin>>n;
 polynommaker(n);
 while(valuefinder(l,n)*valuefinder(h,n)>0 && f==0)
 {l*=10;h*=10;
-//cout<<l<<" "<<h<<endl;
 if(l>x)
     {f=1;}
 }
@@ -45,7 +49,6 @@ if(f==1)
     {h=1;l=0;
     while(valuefinder(l,n)*valuefinder(h,n)>0)
         {l/=10;h/=10;
-        //cout<<l<<" "<<h<<endl;
         }
     }    
 m=(l+h)/2;
